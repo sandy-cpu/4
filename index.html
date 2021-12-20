@@ -8,38 +8,48 @@
     <style>
         body {
             text-align: center;
-            line-height: 30px;
         }
 
        .btn {
-           float: left;
-           margin:5px;
-           width: 30px;
-           height: 30px;
+           cursor: pointer;
+           width: 50px;
+           margin: 5px;
+           height: 50px;
            border: 1px solid black;
+       }
+       #reset {
+           width: 50%;
+           margin:50px 25% 0 25%;
+           cursor: pointer;
+           border: 1px solid black;
+       }
+       #reset:active {
+           background-color: blue;
        }
     </style>
 </head>
 <body>
     <h3 id="turn">PLAYER 1 TURN</h3>
-    <p class="btn" id="btn1" onclick="btn1()"></p>
-    <p class="btn" id="btn2" onclick="btn2()"></p>
-    <p class="btn" id="btn3" onclick="btn3()"></p>
+    <h5>PLAYER 1 = X<br>PLAYER 2 = O</h5>
+    <button class="btn" id="btn1" onclick="btn1()">&nbsp;</button>
+    <button class="btn" id="btn2" onclick="btn2()">&nbsp;</button>
+    <button class="btn" id="btn3" onclick="btn3()">&nbsp;</button>
       <br style="clear:both">
-    <p class="btn" id="btn4" onclick="btn4()"></p>
-    <p class="btn" id="btn5" onclick="btn5()"></p>
-    <p class="btn" id="btn6" onclick="btn6()"></p>
+    <button class="btn" id="btn4" onclick="btn4()">&nbsp;</button>
+    <button class="btn" id="btn5" onclick="btn5()">&nbsp;</button>
+    <button class="btn" id="btn6" onclick="btn6()">&nbsp;</button>
       <br style="clear:both">
-    <p class="btn" id="btn7" onclick="btn7()"></p>
-    <p class="btn" id="btn8" onclick="btn8()"></p>
-    <p class="btn" id="btn9" onclick="btn9()"></p>
+    <button class="btn" id="btn7" onclick="btn7()">&nbsp;</button>
+    <button class="btn" id="btn8" onclick="btn8()">&nbsp;</button>
+    <button class="btn" id="btn9" onclick="btn9()">&nbsp;</button>
+    <h3 id="reset" onclick="reset()">RESET GAME</h3>
 <script>
     var gameover=false;
     var i = 0;
     function btn1(){
         var btn1=document.getElementById("btn1").innerHTML;
         if (gameover==false){
-        if (btn1==''){
+        if (btn1=='&nbsp;'){
             if (i%2==0){
                 document.getElementById("turn").innerHTML="PLAYER 2 TURN";
                 i++;
@@ -53,7 +63,7 @@
     function btn2(){
         var btn2=document.getElementById("btn2").innerHTML;
         if (gameover==false){
-        if (btn2==''){
+        if (btn2=='&nbsp;'){
             if (i%2==0){
                 document.getElementById("turn").innerHTML="PLAYER 2 TURN";
                 i++;
@@ -67,7 +77,7 @@
     function btn3(){
         var btn3=document.getElementById("btn3").innerHTML;
         if (gameover==false){
-        if (btn3==''){
+        if (btn3=='&nbsp;'){
             if (i%2==0){
                 document.getElementById("turn").innerHTML="PLAYER 2 TURN";
                 i++;
@@ -81,7 +91,7 @@
     function btn4(){
         var btn4=document.getElementById("btn4").innerHTML;
         if (gameover==false){
-        if (btn4==''){
+        if (btn4=='&nbsp;'){
             if (i%2==0){
                 document.getElementById("turn").innerHTML="PLAYER 2 TURN";
                 i++;
@@ -95,7 +105,7 @@
     function btn5(){
         var btn5=document.getElementById("btn5").innerHTML;
         if (gameover==false){
-        if (btn5==''){
+        if (btn5=='&nbsp;'){
             if (i%2==0){
                 document.getElementById("turn").innerHTML="PLAYER 2 TURN";
                 i++;
@@ -109,7 +119,7 @@
     function btn6(){
         var btn6=document.getElementById("btn6").innerHTML;
         if (gameover==false){
-        if (btn6==''){
+        if (btn6=='&nbsp;'){
             if (i%2==0){
                 document.getElementById("turn").innerHTML="PLAYER 2 TURN";
                 i++;
@@ -123,7 +133,7 @@
     function btn7(){
         var btn7=document.getElementById("btn7").innerHTML;
         if (gameover==false){
-        if (btn7==''){
+        if (btn7=='&nbsp;'){
             if (i%2==0){
                 document.getElementById("turn").innerHTML="PLAYER 2 TURN";
                 i++;
@@ -137,7 +147,7 @@
     function btn8(){
         var btn8=document.getElementById("btn8").innerHTML;
         if (gameover==false){
-        if (btn8==''){
+        if (btn8=='&nbsp;'){
             if (i%2==0){
                 document.getElementById("turn").innerHTML="PLAYER 2 TURN";
                 i++;
@@ -151,7 +161,7 @@
     function btn9(){
         var btn9=document.getElementById("btn9").innerHTML;
         if (gameover==false){
-        if (btn9==''){
+        if (btn9=='&nbsp;'){
             if (i%2==0){
                 document.getElementById("turn").innerHTML="PLAYER 2 TURN";
                 i++;
@@ -193,6 +203,20 @@
         }
         
     })
+    function reset(){
+        document.getElementById("btn1").innerHTML="&nbsp;";
+        document.getElementById("btn2").innerHTML="&nbsp;";
+        document.getElementById("btn3").innerHTML="&nbsp;";
+        document.getElementById("btn4").innerHTML="&nbsp;";
+        document.getElementById("btn5").innerHTML="&nbsp;";
+        document.getElementById("btn6").innerHTML="&nbsp;";
+        document.getElementById("btn7").innerHTML="&nbsp;";
+        document.getElementById("btn8").innerHTML="&nbsp;";
+        document.getElementById("btn9").innerHTML="&nbsp;";
+        i="0";
+        document.getElementById("turn").innerHTML="PLAYER 1 TURN";
+        gameover=false;
+    }
 </script>
 </body>
 </html>
