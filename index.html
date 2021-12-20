@@ -34,9 +34,11 @@
     <p class="btn" id="btn8" onclick="btn8()"></p>
     <p class="btn" id="btn9" onclick="btn9()"></p>
 <script>
+    var gameover=false;
     var i = 0;
     function btn1(){
         var btn1=document.getElementById("btn1").innerHTML;
+        if (gameover==false){
         if (btn1==''){
             if (i%2==0){
                 document.getElementById("turn").innerHTML="PLAYER 2 TURN";
@@ -46,10 +48,11 @@
                 document.getElementById("turn").innerHTML="PLAYER 1 TURN";
                 i++;
                 document.getElementById("btn1").innerHTML="O";
-            }}
+            }}}
     }
     function btn2(){
         var btn2=document.getElementById("btn2").innerHTML;
+        if (gameover==false){
         if (btn2==''){
             if (i%2==0){
                 document.getElementById("turn").innerHTML="PLAYER 2 TURN";
@@ -59,10 +62,11 @@
                 document.getElementById("turn").innerHTML="PLAYER 1 TURN";
                 i++;
                 document.getElementById("btn2").innerHTML="O";
-            }}
+            }}}
     }
     function btn3(){
         var btn3=document.getElementById("btn3").innerHTML;
+        if (gameover==false){
         if (btn3==''){
             if (i%2==0){
                 document.getElementById("turn").innerHTML="PLAYER 2 TURN";
@@ -72,10 +76,11 @@
                 document.getElementById("turn").innerHTML="PLAYER 1 TURN";
                 i++;
                 document.getElementById("btn3").innerHTML="O";
-            }}
+            }}}
     }
     function btn4(){
         var btn4=document.getElementById("btn4").innerHTML;
+        if (gameover==false){
         if (btn4==''){
             if (i%2==0){
                 document.getElementById("turn").innerHTML="PLAYER 2 TURN";
@@ -85,10 +90,11 @@
                 document.getElementById("turn").innerHTML="PLAYER 1 TURN";
                 i++;
                 document.getElementById("btn4").innerHTML="O";
-            }}
+            }}}
     }
     function btn5(){
         var btn5=document.getElementById("btn5").innerHTML;
+        if (gameover==false){
         if (btn5==''){
             if (i%2==0){
                 document.getElementById("turn").innerHTML="PLAYER 2 TURN";
@@ -98,10 +104,11 @@
                 document.getElementById("turn").innerHTML="PLAYER 1 TURN";
                 i++;
                 document.getElementById("btn5").innerHTML="O";
-            }}
+            }}}
     }
     function btn6(){
         var btn6=document.getElementById("btn6").innerHTML;
+        if (gameover==false){
         if (btn6==''){
             if (i%2==0){
                 document.getElementById("turn").innerHTML="PLAYER 2 TURN";
@@ -111,10 +118,11 @@
                 document.getElementById("turn").innerHTML="PLAYER 1 TURN";
                 i++;
                 document.getElementById("btn6").innerHTML="O";
-            }}
+            }}}
     }
     function btn7(){
         var btn7=document.getElementById("btn7").innerHTML;
+        if (gameover==false){
         if (btn7==''){
             if (i%2==0){
                 document.getElementById("turn").innerHTML="PLAYER 2 TURN";
@@ -124,10 +132,11 @@
                 document.getElementById("turn").innerHTML="PLAYER 1 TURN";
                 i++;
                 document.getElementById("btn7").innerHTML="O";
-            }}
+            }}}
     }
     function btn8(){
         var btn8=document.getElementById("btn8").innerHTML;
+        if (gameover==false){
         if (btn8==''){
             if (i%2==0){
                 document.getElementById("turn").innerHTML="PLAYER 2 TURN";
@@ -137,10 +146,11 @@
                 document.getElementById("turn").innerHTML="PLAYER 1 TURN";
                 i++;
                 document.getElementById("btn8").innerHTML="O";
-            }}
+            }}}
     }
     function btn9(){
         var btn9=document.getElementById("btn9").innerHTML;
+        if (gameover==false){
         if (btn9==''){
             if (i%2==0){
                 document.getElementById("turn").innerHTML="PLAYER 2 TURN";
@@ -150,7 +160,7 @@
                 document.getElementById("turn").innerHTML="PLAYER 1 TURN";
                 i++;
                 document.getElementById("btn9").innerHTML="O";
-            }}
+            }}}
     }
     $('.btn').click(function(){
         var btn1=document.getElementById("btn1").innerHTML
@@ -162,17 +172,24 @@
         var btn7=document.getElementById("btn7").innerHTML
         var btn8=document.getElementById("btn8").innerHTML
         var btn9=document.getElementById("btn9").innerHTML
-        if(btn1=="X"&&btn2=="X"&&btn3=="X"||btn4=="X"&&btn5=="X"&&btn6=="X"||btn7=="X"&&btn8=="X"&&btn9=="X"||btn1=="X"&&btn4=="X"&&btn7=="X"||
-        btn2=="X"&&btn5=="X"&&btn8=="X"||btn3=="X"&&btn6=="X"&&btn9=="X"||btn1=="X"&&btn5=="X"&&btn9=="X"||btn3=="X"&&btn5=="X"&&btn7=="X"){
-            alert('Player 1 win');
-        }
-        else if(btn1=="O"&&btn2=="O"&&btn3=="O"||btn4=="O"&&btn5=="O"&&btn6=="O"||btn7=="O"&&btn8=="O"&&btn9=="O"||btn1=="O"&&btn4=="O"&&btn7=="O"||
-        btn2=="O"&&btn5=="O"&&btn8=="O"||btn3=="O"&&btn6=="O"&&btn9=="O"||btn1=="O"&&btn5=="O"&&btn9=="O"||btn3=="O"&&btn5=="O"&&btn7=="O"){
-            alert('Player 2 win');
-        } else {
-            if (i>=9){
-                    alert("Draw")
+        if (gameover==false){
+            if(btn1=="X"&&btn2=="X"&&btn3=="X"||btn4=="X"&&btn5=="X"&&btn6=="X"||btn7=="X"&&btn8=="X"&&btn9=="X"||btn1=="X"&&btn4=="X"&&btn7=="X"||
+            btn2=="X"&&btn5=="X"&&btn8=="X"||btn3=="X"&&btn6=="X"&&btn9=="X"||btn1=="X"&&btn5=="X"&&btn9=="X"||btn3=="X"&&btn5=="X"&&btn7=="X"){
+                alert('Player 1 win');
+                gameover=true;
             }
+            else if(btn1=="O"&&btn2=="O"&&btn3=="O"||btn4=="O"&&btn5=="O"&&btn6=="O"||btn7=="O"&&btn8=="O"&&btn9=="O"||btn1=="O"&&btn4=="O"&&btn7=="O"||
+            btn2=="O"&&btn5=="O"&&btn8=="O"||btn3=="O"&&btn6=="O"&&btn9=="O"||btn1=="O"&&btn5=="O"&&btn9=="O"||btn3=="O"&&btn5=="O"&&btn7=="O"){
+                alert('Player 2 win');
+                gameover=true;
+            } else {
+                if (i>=9){
+                    alert("Draw")
+                    gameover=true;
+            }
+            }
+        } else {
+            alert("Please reset the game")
         }
         
     })
