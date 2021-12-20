@@ -26,11 +26,23 @@
        #reset:active {
            background-color: blue;
        }
+       #player1, #player2, #draw{
+            display: none;
+            padding: 20px;
+            background-color: #f44336;
+            color: white;
+            opacity: 1;
+            transition: opacity 0.6s;
+            margin-bottom: 15px;
+       }
     </style>
 </head>
 <body>
     <h3 id="turn">PLAYER 1 TURN</h3>
     <h5>PLAYER 1 = X<br>PLAYER 2 = O</h5>
+    <h3 id="player1">PLAYER 1 WIN</h3>
+    <h3 id="player2">PLAYER 2 WIN</h3>
+    <h3 id="draw">DRAW</h3>
     <button class="btn" id="btn1" onclick="btn1()">&nbsp;</button>
     <button class="btn" id="btn2" onclick="btn2()">&nbsp;</button>
     <button class="btn" id="btn3" onclick="btn3()">&nbsp;</button>
@@ -185,21 +197,24 @@
         if (gameover==false){
             if(btn1=="X"&&btn2=="X"&&btn3=="X"||btn4=="X"&&btn5=="X"&&btn6=="X"||btn7=="X"&&btn8=="X"&&btn9=="X"||btn1=="X"&&btn4=="X"&&btn7=="X"||
             btn2=="X"&&btn5=="X"&&btn8=="X"||btn3=="X"&&btn6=="X"&&btn9=="X"||btn1=="X"&&btn5=="X"&&btn9=="X"||btn3=="X"&&btn5=="X"&&btn7=="X"){
-                alert('Player 1 win');
+                $("#player1").fadeIn("fast");
+                document.getElementById("turn").innerHTML="GAMEOVER";
                 gameover=true;
             }
             else if(btn1=="O"&&btn2=="O"&&btn3=="O"||btn4=="O"&&btn5=="O"&&btn6=="O"||btn7=="O"&&btn8=="O"&&btn9=="O"||btn1=="O"&&btn4=="O"&&btn7=="O"||
             btn2=="O"&&btn5=="O"&&btn8=="O"||btn3=="O"&&btn6=="O"&&btn9=="O"||btn1=="O"&&btn5=="O"&&btn9=="O"||btn3=="O"&&btn5=="O"&&btn7=="O"){
-                alert('Player 2 win');
+                $("#player2").fadeIn("fast");
+                document.getElementById("turn").innerHTML="GAMEOVER";
                 gameover=true;
             } else {
                 if (i>=9){
-                    alert("Draw")
+                    $("#draw").fadeIn("fast");
+                    document.getElementById("turn").innerHTML="GAMEOVER";
                     gameover=true;
             }
             }
         } else {
-            alert("Please reset the game")
+            alert("Gameover, Please reset the game")
         }
         
     })
@@ -216,6 +231,9 @@
         i="0";
         document.getElementById("turn").innerHTML="PLAYER 1 TURN";
         gameover=false;
+        $("#player1").fadeOut("fadeOut");
+        $("#player2").fadeOut("fadeOut");
+        $("#draw").fadeOut("fadeOut");
     }
 </script>
 </body>
